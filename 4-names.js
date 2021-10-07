@@ -9,6 +9,7 @@ const peter = "peter";
 
 console.log(module);
 module.exports = {
+  //if multiple element is exported
   john: john,
   peter: peter,
 };
