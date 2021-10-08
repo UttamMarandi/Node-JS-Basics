@@ -34,3 +34,8 @@ writeFileSync(
   `The append result of first and second is ${firstData} ${secondData}`,
   { flag: "a" } //pass an object with key flag and value a to append file
 );
+
+console.log("done with the task");
+console.log("starting the next line");
+
+//in synch code flow is control is top to bottom . now reading and writing files may take some time and for that time execution is halted
