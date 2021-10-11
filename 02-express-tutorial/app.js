@@ -69,6 +69,19 @@ app.put("/api/people/:id", (req, res) => {
   res.status(200).json({ sucess: true, data: newPeople });
 });
 
+//app.delete
+app.delete("/api/people/:id", (req, res) => {
+  const { id } = req.params;
+  //find the person with the id
+  const person = people.find((person) => person.id === Number(id));
+  if (!person) {
+    res.status(404).json({ sucess: false, msg: "data not found" });
+  }
+  const newPeople = people.filter((person) => person.id !== Number(id));
+  //if person id is not same with id provided, then include in newPeople
+  return res.status(200).json({ sucess: true, data: newPeople });
+});
+
 app.listen(5000, (req, res) => {
   console.log("Server listening at port 5000");
 });
